@@ -4,13 +4,13 @@ require 'pry'
 require_relative '../config/environment'
 
 def reset_database
-  Song.drop_table
-  Song.create_table
-  Song.create(name: "Hello", album: "25")
+  Song.drop_table #remove pre-existing table to start fresh
+  Song.create_table   # create new table
+  Song.create(name: "Hello", album: "25") #populate with data
   Song.create(name: "99 Problems", album: "The Black Album")
 end
 
-reset_database
+reset_database #call reset_database method
 
 binding.pry
 "pls"
